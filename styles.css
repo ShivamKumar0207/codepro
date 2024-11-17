@@ -1,0 +1,535 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: gilroy;
+}
+html, body{
+  height: 100%;
+  width: 100%;
+  background-color:black;
+}
+/* This section come first when we open this website with animation */
+.intro_animation{
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  color: white;
+  font-family: gilroy;
+  position: absolute;
+  animation-name: intro;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+}
+.intro_animation span{
+  color: yellowgreen;
+}
+
+/* @keyframes intro {
+
+    0%{
+      opacity: 0;
+      z-index: 1;
+    }
+    50%{
+      opacity: 1;
+    }
+    75%{
+      opacity: 0.5;
+    }
+    100%{
+      opacity: 0;
+      z-index: -1;
+      transition: z-index 0.3s;
+    }
+}  */
+
+/* Landing page of the website starts here */
+.main{
+  height: 110vh;
+  width: 100vw;
+  background-color: #BB51F8;;
+  opacity: 1;
+  animation-name: main;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-delay: 3s;
+  animation-timing-function: linear;
+  background-size: cover;
+  position: relative;
+}
+/* Main section animation starts here */
+
+/* @keyframes main {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+} */
+
+/* Main section animation ends here */
+
+/* Navigation bar starts here with logo and some options */
+.main nav{
+  height: 10vh;
+  width: 100vw;
+  background-color: #BB51F8;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: Helvetica Now Display;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.3vw;
+  font-weight: 700;
+  padding: 0 3vw;
+  color: yellow;
+}
+
+nav h4:hover{
+  color: black;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+/* Logo of the website */
+
+.main nav .logo{
+  height: 4vw;
+  width: 4vw;
+}
+nav .logo img{
+  object-fit: cover;
+  height: 4vw;
+  width: 4vw;
+}
+
+/* Hemburger icon which get activated in small screen */
+nav i{
+  font-size: 1.5vw;
+  display: none;
+  font-weight: 800;
+}
+
+/* SinIn / Login part starts here */
+nav button{
+  font-size: 1.1vw;
+  padding: 0.8vw 1.2vw;
+  border-radius: 30px;
+  border: none;
+  background-color: greenyellow;
+
+}
+
+nav button:hover{
+  background-color:#f7ff66;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+/* SinIn / Login part ends here */
+
+
+/* In Main section i have kept nav and landing_page. */
+/* landing_page consists of 2 parts left and right */
+/* In left part we have texts and one image whereas on right side
+  we have one single image */
+
+
+.landing_page{
+  height: calc(100vh - 10vh);
+  width: 100vw;
+  display: flex;
+  position: relative;
+}
+.landing_page .left{
+  height: 100vh;
+  width: 55%;
+  /* background-color:yellowgreen; */
+  padding: 5vw 3vw;
+}
+.landing_page .left h1{
+  font-size: 4vw;
+  color: whitesmoke;
+}
+.left span{
+  color:greenyellow;
+}
+
+.left p{
+  font-size: 1.5vw;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 3vw;
+  color: whitesmoke;
+}
+.left button{
+  font-size: 1.5vw;
+  padding: 1vw 3vw;
+  color: black;
+  background-color: greenyellow;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  margin: 4vw 16vw;
+}
+
+.left button:hover{
+  background-color: rgb(73, 238, 238);
+  transition: all 0.4s;
+  color:blue;
+  cursor: pointer;
+}
+
+
+.left img{
+  height: 17vw;
+  object-fit: cover;
+  padding: 0 15vw;
+}
+.landing_page .right{
+  height: 100vh;
+  width: 45%;
+}
+.right img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Making the landing_page responsive for all devices */
+@media (max-width:600px) {
+  .main nav{
+    color: gainsboro;
+    height: 60px;
+    padding: 0 5vw;
+    background-color:#BB51F8;
+    
+  }
+  nav h4{
+    font-size: 1vw;
+    display: none;
+  }
+  nav i{
+    display: block;
+    font-size: 6vw;
+  }
+  nav button{
+    display: none;
+  }
+  .landing_page{
+    height: calc(100% - 60px);
+    flex-direction: column;
+  }
+  .left button{
+    margin: 5vw 38vw;
+  }
+  .left img{
+    height: 24vh;
+    margin-left: 10vh;
+    margin-top: -2vh;
+  }
+  .landing_page .left{
+    width: 100%;
+    height: 50%;
+  }
+  .landing_page .right{
+    width: 100%;
+    height: 50%;
+  }
+  .right img{
+    height: 100%;
+  }
+}
+
+
+/* 2nd section starts here. */
+/* Here the stracture was same for 4 section so i made
+a generic code of a structure and in html i pasted it 4 times
+as they have same class no need to write code again and again */
+
+/* autoshow is the parent stracture with have 2 child .info and .context */
+
+.autoshow{
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(to right,#BB51F8,#974DF7, #BB51F8);
+  display: flex;
+  justify-content:center;
+  animation: autoShowAnimation both;
+  animation-timeline: view(90% 15%);
+  position: relative;
+}
+
+/* Info part carries the title of course along with 3 buttons and one image */
+.autoshow .info{
+  height: 100vh;
+  width: 50%;
+  font-family: Helvetica Now Display;
+}
+.autoshow .info h1{
+  font-size: 6vw;
+  text-align: center;
+  padding-top: 2vw;
+  color: white;
+}
+.autoshow .info p{
+  font-size: 1.4vw;
+  text-align: center;
+  font-weight: 700;
+  color: greenyellow;
+}
+.autoshow .info button{
+  display: flex;
+  flex-direction: column;
+  padding: 0.8vw 2vw;
+  justify-self: center;
+  font-size: 1.2vw;
+  font-weight: 600;
+  border-radius: 2vw;
+  border: none;
+}
+/* Button - 1 */
+.autoshow .info #first{
+  background-color: yellow;
+  margin-top: 4vw;
+}
+
+.info #first:hover{
+  background-color: greenyellow;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+/* Button -2 */
+.autoshow .info #second{
+  background-color:coral;
+  margin-top: 1.5vw;
+}
+
+.info #second:hover{
+  background-color: greenyellow;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+/* Button-3 */
+.autoshow .info #third{
+  background-color:skyblue;
+  margin-top: 1.5vw;
+}
+.info #third:hover{
+  background-color: greenyellow;
+  transition: all 0.4s;
+  cursor: pointer;
+}
+
+.autoshow .info img{
+  height: 15vw;
+  object-fit: cover;
+  margin-left: 18vw;
+  margin-top: 5vh;
+}
+
+/* Right part of 2nd section with consist of 2 boxes */
+/* One is with border-radius and have title of course */
+/* and other box inside that is there which have introduction
+about the course */
+.autoshow .context{
+  height: 100vh;
+  width: 50%;
+
+}
+.context .box{
+  height: 30vw;
+  width: 40vw;
+  margin-top: 9vw;
+  margin-left: 5vw;
+  border: 2px solid black;
+  border-radius: 1.5vw;
+  overflow: hidden;
+  background-color:#f7ff66;
+}
+.context .box h2{
+  font-size: 2.5vw;
+  padding-left: 3vw;
+  padding-top: 2vw;
+}
+.context .box .introduction{
+  height: 25vw;
+  width: 35vw;
+  margin: auto;
+  border: 2px solid red;
+  border-radius: 1.5vw;
+  overflow: hidden;
+}
+.box .introduction p{
+  margin-left: 2vw;
+  margin-top: 2vw;
+}
+
+/* This part added that animation while scrolling here i took 
+help from youtube channel(Lun Dev) and modified this according to 
+my website. */
+
+@keyframes autoShowAnimation {
+  from{
+    opacity: 0;
+    transform: translateY(100px) scale(0.3);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Responsive part of secton 2,3,4,5 */
+@media (max-width:600px) {
+  .autoshow{
+    flex-direction: column;
+  }
+  .autoshow .info{
+    width: 100%;
+  }
+  .autoshow .info h1{
+    font-size: 10vh;
+
+  }
+  .autoshow .info p{
+    font-size: 2vh;
+    font-weight: 600;
+  }
+  .autoshow .info button{
+    font-size: 2vh;
+  }
+  .autoshow .info img{
+    height: 15vh;
+    margin-left: 28vh;
+  }
+  .autoshow .context{
+    width: 100%;
+  }
+  .autoshow .context .box{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+  .autoshow .context .introduction{
+    width: 80%;
+    height: 100%;
+  }
+}
+
+/* At last we have footer witch contain a contact form
+and some text in right of it along with a image. */
+
+footer{
+  height: 45vw;
+  width: 100vw;
+  background-color:aliceblue;
+  display: flex;
+}
+
+/* Contact form starts here. I took help from chat gpt for this
+and made some changes accordingly */
+
+.container {
+  background-color:aliceblue;
+  padding: 30px;
+  margin-left: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 500px; /* Max width for larger screens */
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%; /* Full width */
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #66aaff; /* Highlight border on focus */
+}
+
+.submit-button {
+  background-color: #66aaff;
+  color:white;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%; /* Full width */
+}
+
+.submit-button:hover {
+  background-color: #5599dd; 
+}
+
+/* This is footer right side part with contain some text and a image */
+footer .coming_soon{
+  height: 30vw;
+  width: 60%;
+  margin-top: 5vw;
+  position: relative;
+}
+.coming_soon p{
+  font-size: 3vw;
+  padding: 2vw 4vw;
+}
+.coming_soon img{
+  height: 20vw;
+  object-fit: cover;
+  margin-left: 15vw;
+}
+.coming_soon span{
+  color: green;
+}
+/* Responsive Styles of footer*/
+@media (max-width: 600px) {
+  footer{
+    flex-direction: column;
+     height: 110vh;
+  }
+  .container {
+      padding: 15px; 
+      width: 100%; /* Full width on smaller screens */
+      margin: 0;
+  }
+
+  h1 {
+      font-size: 24px; 
+  }
+
+  .coming_soon p{
+    font-size: 3vh;
+  }
+  .coming_soon img{
+    margin-left: 26vh;
+  }
+}
